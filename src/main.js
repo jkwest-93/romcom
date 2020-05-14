@@ -19,6 +19,14 @@ function getRandomIndex(array) {
 }
 
 //Iteration 0
+function randomCover() {
+  var randomCover = covers[getRandomIndex(covers)];
+  var randomTitle = titles[getRandomIndex(titles)];
+  var randomDescriptor1 = descriptors[getRandomIndex(descriptors)];
+  var randomDescriptor2 = descriptors[getRandomIndex(descriptors)];
+
+  return newBook = new Cover(randomCover, randomTitle, randomDescriptor1, randomDescriptor2);
+}
 //When page loads, user see: 1) random cover image, 2) random title, 3) tagline with two random descriptors
 //Create a function for randomizing data arrays (getRandomIndex function)
 //Pass in covers, title, and descriptor arrays
