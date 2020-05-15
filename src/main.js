@@ -1,4 +1,8 @@
 // Create variables targetting the relevant DOM elements here 👇
+var currentCover = document.querySelector('.cover-image');
+var currentTitle = document.querySelector('.cover-title');
+var currentDesc1 = document.querySelector('.tagline-1');
+var currentDesc2 = document.querySelector('.tagline-2');
 
 
 // We've provided a few variables below
@@ -8,9 +12,10 @@ var savedCovers = [
 var currentCover;
 
 // Add your event listeners here 👇
-window.addEventListener('load', randomCover, false);
+
 
 // Create your event handlers and other functions here 👇
+window.onload = randomCover;
 
 
 // We've provided one function to get you started
@@ -20,18 +25,17 @@ function getRandomIndex(array) {
 
 //Iteration 0
 function randomCover() {
-  var randomCover = covers[getRandomIndex(covers)];
-  var randomTitle = titles[getRandomIndex(titles)];
-  var randomDescriptor1 = descriptors[getRandomIndex(descriptors)];
-  var randomDescriptor2 = descriptors[getRandomIndex(descriptors)];
-
-  return newBook = new Cover(randomCover, randomTitle, randomDescriptor1, randomDescriptor2);
+  var randomNumCover = getRandomIndex(covers);
+  var randomNumTitle = getRandomIndex(titles);
+  var randomNumDesc1 = getRandomIndex(descriptors);
+  var randomNumDesc2 = getRandomIndex(descriptors);
+  currentCover.src = covers[randomNumCover];
+  currentTitle.innerText = titles[randomNumTitle];
+  currentDesc1.innerText = descriptors[randomNumDesc1];
+  currentDesc2.innerText = descriptors[randomNumDesc2];
 }
-//When page loads, user see: 1) random cover image, 2) random title, 3) tagline with two random descriptors
-//Create a function for randomizing data arrays (getRandomIndex function)
-//Pass in covers, title, and descriptor arrays
-//Create a new variable for randomized cover/title/descriptor(x2) index
-//Return new cover object
+
+
 
 //Iteration 1
 //Every time user clicks "Show random cover" button, new random cover is created
