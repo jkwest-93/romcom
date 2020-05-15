@@ -3,7 +3,7 @@ var currentCover = document.querySelector('.cover-image');
 var currentTitle = document.querySelector('.cover-title');
 var currentDesc1 = document.querySelector('.tagline-1');
 var currentDesc2 = document.querySelector('.tagline-2');
-
+var randomCoverButton = document.querySelector('.random-cover-button');
 
 // We've provided a few variables below
 var savedCovers = [
@@ -12,7 +12,7 @@ var savedCovers = [
 var currentCover;
 
 // Add your event listeners here 👇
-
+randomCoverButton.addEventListener('click', randomCover);
 
 // Create your event handlers and other functions here 👇
 window.onload = randomCover;
@@ -36,13 +36,10 @@ function randomCover() {
 }
 
 
-
 //Iteration 1
 //Every time user clicks "Show random cover" button, new random cover is created
-//Create a new cover object using cover class, piping in random variables
-//Event listener: click (calls random cover generator) -> new object
-//Event handler: the randomCover & replace old cover functions
-//Update existing cover to return new object
+//Event listener: click (calls random cover generator)
+//Event handler: the randomCover functions
 //Display object: function to display info on the dom - push new random cover to the DOM tree replacing current class cover with new random variable values
 
 //Iteration 2
