@@ -8,6 +8,7 @@ var randomCoverButton = document.querySelector('.random-cover-button');
 var makeOwnCoverButton = document.querySelector('.make-new-button')
 var homeButton = document.querySelector('.home-button');
 var saveCoverButton = document.querySelector('.save-cover-button');
+var savedCoversButton = document.querySelector('.view-saved-button');
 
 // We've provided a few variables below
 var savedCovers = [
@@ -25,6 +26,7 @@ var randomCoverButton = document.querySelector('.random-cover-button');
 // Add your event listeners here 👇
 randomCoverButton.addEventListener('click', randomCover);
 makeOwnCoverButton.addEventListener('click', toggleMode);
+savedCoversButton.addEventListener('click', toggleSavedCovers);
 
 // Create your event handlers and other functions here 👇
 window.onload = randomCover;
@@ -45,20 +47,23 @@ function toggleMode() {
   homeButton.classList.toggle('hidden');
   saveCoverButton.classList.toggle('hidden');
   randomCoverButton.classList.toggle('hidden');
-}
-};
+  }
 
-//Iteration 1
-//Every time user clicks "Show random cover" button, new random cover is created
-//Event listener: click (calls random cover generator)
-//Event handler: the randomCover functions
-//Display object: function to display info on the dom - push new random cover to the DOM tree replacing current class cover with new random variable values
+function toggleSavedCovers() {
+  document.querySelector('.home-view').classList.toggle('hidden');
+  document.querySelector('.saved-view').classList.toggle('hidden');
+  homeButton.classList.toggle('hidden');
+  randomCoverButton.classList.toggle('hidden');
+  saveCoverButton.classList.toggle('hidden');
+}
+
+
+
+
 
 //Iteration 2
-//When a user clicks the make your own cover button, we should see form & home page view should be hidden
-//Event listener: user click "make your own cover"
-//Event handler: new function that changes html class to remove hidden for the form page
-//Event handler: function that changes html class to hide the home page; save cover button hidden, new random cover button should be hidden; home button should be visible
+//on saved covers, hide save cover
+//
 
 //Iteration 3
 //In the form field, user should fill out 4 input fields & hit save button
