@@ -1,4 +1,3 @@
-// Create variables targetting the relevant DOM elements here 👇
 var randCover = document.querySelector('.cover-image');
 var currentTitle = document.querySelector('.cover-title');
 var currentDesc1 = document.querySelector('.tagline-1');
@@ -12,58 +11,51 @@ var homeView = document.querySelector('.home-view');
 var formView = document.querySelector('.form-view');
 var savedView = document.querySelector('.saved-view');
 
-// We've provided a few variables below
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
 
 var currentCover;
 
-// Add your event listeners here 👇
+window.onload = randomCover;
 randomCoverButton.addEventListener('click', randomCover);
 makeOwnCoverButton.addEventListener('click', toggleMakeCover);
 savedCoversButton.addEventListener('click', toggleSavedCovers);
 homeButton.addEventListener('click', toggleHome);
 
-// Create your event handlers and other functions here 👇
-window.onload = randomCover;
-
-// We've provided one function to get you started
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
 function randomCover() {
-  currentCover = new Cover (randCover.src = covers[getRandomIndex(covers)], currentTitle.innerText = titles[getRandomIndex(titles)], currentDesc1.innerText = descriptors[getRandomIndex(descriptors)], currentDesc2.innerText = descriptors[getRandomIndex(descriptors)]);
+  currentCover = new Cover (randCover.src =                     covers[getRandomIndex(covers)], currentTitle.innerText = titles[getRandomIndex(titles)], currentDesc1.innerText = descriptors[getRandomIndex(descriptors)], currentDesc2.innerText = descriptors[getRandomIndex(descriptors)]);
 }
 
 function toggleMakeCover() {
-  document.querySelector('.home-view').classList.toggle('hidden');
-  document.querySelector('.form-view').classList.toggle('hidden');
-  homeButton.classList.toggle('hidden');
-  saveCoverButton.classList.toggle('hidden');
-  randomCoverButton.classList.toggle('hidden');
-  if (savedCoversButton.clicked === true) {
-    toggleSavedCovers();
-  }
+  homeView.classList.add('hidden');
+  formView.classList.remove('hidden');
+  savedView.classList.add('hidden');
+  homeButton.classList.remove('hidden');
+  saveCoverButton.classList.add('hidden');
+  randomCoverButton.classList.add('hidden');
 }
 
 function toggleSavedCovers() {
-  document.querySelector('.home-view').classList.toggle('hidden');
-  document.querySelector('.saved-view').classList.toggle('hidden');
-  homeButton.classList.toggle('hidden');
-  randomCoverButton.classList.toggle('hidden');
-  saveCoverButton.classList.toggle('hidden');
-  if (makeOwnCoverButton.clicked === true) {
-    toggleMakeCover();
-  }
+  homeView.classList.add('hidden');
+  savedView.classList.remove('hidden');
+  formView.classList.add('hidden');
+  homeButton.classList.remove('hidden');
+  randomCoverButton.classList.add('hidden');
+  saveCoverButton.classList.add('hidden');
 }
 
 function toggleHome() {
-  document.querySelector('.home-view').classList.toggle('hidden');
-  homeButton.classList.toggle('hidden');
-  randomCoverButton.classList.toggle('hidden');
-  saveCoverButton.classList.toggle('hidden');
+  homeView.classList.remove('hidden');
+  formView.classList.add('hidden');
+  savedView.classList.add('hidden');
+  homeButton.classList.add('hidden');
+  randomCoverButton.classList.remove('hidden');
+  saveCoverButton.classList.remove('hidden');
 }
 
 //Iteration 3
