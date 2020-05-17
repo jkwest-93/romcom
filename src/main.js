@@ -27,8 +27,16 @@ function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
+function displayCover() {
+  randCover.src = currentCover.cover;
+  currentTitle.innerText = currentCover.title;
+  currentDesc1.innerText = currentCover.tagline1;
+  currentDesc2.innerText = currentCover.tagline2;
+}
+
 function randomCover() {
-  currentCover = new Cover (randCover.src =                     covers[getRandomIndex(covers)], currentTitle.innerText = titles[getRandomIndex(titles)], currentDesc1.innerText = descriptors[getRandomIndex(descriptors)], currentDesc2.innerText = descriptors[getRandomIndex(descriptors)]);
+  currentCover = new Cover (                    covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)]);
+  displayCover();
 }
 
 function toggleMakeCover() {
