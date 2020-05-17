@@ -72,6 +72,13 @@ function toggleHome() {
   saveCoverButton.classList.remove('hidden');
 }
 
+function addToArrays() {
+  covers.push(currentCover.cover);
+  titles.push(currentCover.title);
+  descriptors.push(currentCover.tagline1);
+  descriptors.push(currentCover.tagline2);
+}
+
 function createNewCover() {
   var coverInput = userCover.value;
   var titleInput = userTitle.value;
@@ -79,13 +86,8 @@ function createNewCover() {
   var desc2Input = userDesc2.value;
   currentCover = new Cover(coverInput, titleInput, desc1Input, desc2Input);
 
+  addToArrays();
   displayCover();
-  toggleHome();=
+  toggleHome();
   event.preventDefault()
-};
-//Iteration 3
-//In the form field, user should fill out 4 input fields & hit save button
-//Input and data need to be put in their respective arrays
-//Use the values from the inputs to create a new cover (new object from cover class)
-//Event listener: user clicks save button
-//Event handler: function to change back to the main home view (add hidden property), with new cover displayed
+}
