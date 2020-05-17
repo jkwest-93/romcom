@@ -1,18 +1,34 @@
 ---
 title: RomCom - Pair
 ---
+## Project & Goals
+### Project description
+This project represents the collaborative efforts of Taryn Martin and Jake West. This is our first paired project in Mod 1 of the Turing Front End Program (Cohort 2005). We were tasked with building an app that generates romance novel covers, populated by a random cover image, title, and two subtitle descriptors. We were given a existing codebase for CSS styling elements & HTML elements to manipulate, as well as data arrays to reference & a constructor element to create objects. We were responsible for using JavaScript to build out further functionality. This project was broken into multiple iterations, each with unique requirements (described below). The functionality we successfully built includes:
+  1. random cover generator
+  2. button functionality to switch views
+  3. TBD.....
 
-## Learning Goals
+### Learning Goals
 
-* Write clean, DRY JavaScript to store our data
-* Use a provided class by creating object instances using the `new` keyword
-* Manipulate the page after it has loaded adding, removing, and updating elements on the DOM
-* Understand event bubbling and use event delegation on dynamic elements
-* Begin to understand how to write effective, clean HTML & CSS
+* Deepen our understanding of JavaScript syntax & logic
+* Learn how JavaScript interacts with CSS & HTML code, as well as DOM elements
+* Minimize external research & rely on skills we've built
+* Comprehension > production
+* Strengthen our skills as collaborators on a project
 
-## Overview
+## Project Status
 
-People say that romance novels are formulaic. Well ... maybe that's true. We're going to make an app that generates romance novel covers!
+Currently in development: working on using "Make Your Own Cover" form to create new covers with user input.
+
+## Project Screenshots
+
+
+## Reflection
+
+## Links
++ Deployed Site: https://jkwest-93.github.io/romcom/
++ Taryn Martin GitHub: https://github.com/bjjdestroyer
++ Jake West GitHub: https://github.com/jkwest-93/
 
 ## Set Up
 
@@ -39,7 +55,7 @@ Then, as a team:
 By the end of the day, complete the following tasks:
 
 * As a team, read the entire project spec and rubric
-* As a team, create a rough timeline to follow 
+* As a team, create a rough timeline to follow
 * As a team, create a public document for your DTR (instructions can be found [here](https://github.com/turingschool/career-development-curriculum/blob/master/module_one/dtr_guidelines_memo.md))
 * Make sure all teammates are added as collaborators to the forked repository
 * Create a private Slack channel with all members of the project AND your assigned instructor and share links to:
@@ -67,24 +83,24 @@ To earn a given score, an application must meet the requirements listed in that 
 
 ### Professionalism
 
-* **4:** 
+* **4:**
   - Team uses a PR template
   - Team habitually conducts thorough code reviews in the GitHub GUI to document the progress of the application
   - Team has sought out code reviews from one or more mentors
   - README is well formatted and descriptive with screenshots or gifs of the application in action
-* **3:** 
+* **3:**
   - Commits are atomic and frequent, effectively documenting the evolution/progression of the application
   - Commit messages are consistent, descriptive, and concise
   - Team uses PRs to screen/verify code before adding it to the master branch
   - There is no more than a 10% disparity in code contributions between teammates
   - README is well formatted and gives good context about the project, including links to both contributors' GitHub profiles, and to the deployed GitHub Pages site
-* **2:** 
+* **2:**
   - Commits are large and do not effectively communicate the progression of the application
   - Team uses PRs but do not review code before merging into the master branch
   - All teammates can speak to the purpose and functionality of any/every line of code
   - There is a 20% disparity in code contributions between teammates
   - README is brief and does not provide context for the project
-* **1:** 
+* **1:**
   - Teammates do not understand the purpose and functionality of every line of code
   - Some commits are pushed directly to the master branch
   - PRs are used inconsistently
@@ -93,21 +109,21 @@ To earn a given score, an application must meet the requirements listed in that 
 
 ### JavaScript Style & Implementation
 
-* **4:** 
+* **4:**
   - There are no global variables aside from query selectors, `currentCover` and `savedCovers`.
   - All functions strictly adhere to [SRP](http://knnthvu.weebly.com/srp-and-dry.html) and - with few exceptions - are around 10 lines of code or less
   - All functions and variables are semantically and concisely named
   - Uses logical operators instead of if/else statements where applicable
   - Code contains no antipatterns
-* **3:** 
+* **3:**
   - Application uses event delegation correctly on dynamic elements
   - Functions are [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) and observe [SRP](http://knnthvu.weebly.com/srp-and-dry.html)
   - Functions make use of parameters and arguments in order to be more dynamic
-* **2:** 
+* **2:**
   - Properly uses parameters and arguments when used
   - Uses named functions instead of anonymous functions as event handlers in event listeners
   - Correctly uses if/else statements to handle multiple paths of logic & error handling
-* **1:** 
+* **1:**
   - Crafts JS according to the [Turing JS style guide](https://github.com/turingschool-examples/javascript/tree/master/es5)
 
 
