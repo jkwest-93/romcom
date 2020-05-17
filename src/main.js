@@ -10,6 +10,11 @@ var savedCoversButton = document.querySelector('.view-saved-button');
 var homeView = document.querySelector('.home-view');
 var formView = document.querySelector('.form-view');
 var savedView = document.querySelector('.saved-view');
+var userCover = document.querySelector('#cover');
+var userTitle = document.querySelector('#title');
+var userDesc1 = document.querySelector('#descriptor1');
+var userDesc2 = document.querySelector('#descriptor2');
+var makeOwnCoverForm = document.querySelector("form");
 
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
@@ -22,6 +27,7 @@ randomCoverButton.addEventListener('click', randomCover);
 makeOwnCoverButton.addEventListener('click', toggleMakeCover);
 savedCoversButton.addEventListener('click', toggleSavedCovers);
 homeButton.addEventListener('click', toggleHome);
+makeOwnCoverForm.addEventListener('submit', createNewCover);
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
@@ -66,6 +72,17 @@ function toggleHome() {
   saveCoverButton.classList.remove('hidden');
 }
 
+function createNewCover() {
+  var coverInput = userCover.value;
+  var titleInput = userTitle.value;
+  var desc1Input = userDesc1.value;
+  var desc2Input = userDesc2.value;
+  currentCover = new Cover(coverInput, titleInput, desc1Input, desc2Input);
+
+  displayCover();
+  toggleHome();=
+  event.preventDefault()
+};
 //Iteration 3
 //In the form field, user should fill out 4 input fields & hit save button
 //Input and data need to be put in their respective arrays
