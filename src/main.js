@@ -5,7 +5,7 @@ var currentDesc2 = document.querySelector('.tagline-2');
 var randomCoverButton = document.querySelector('.random-cover-button');
 var makeOwnCoverButton = document.querySelector('.make-new-button')
 var homeButton = document.querySelector('.home-button');
-var saveCoverButton = document.querySelector('.save-cover-button');
+var saveCoverBtn = document.querySelector('.save-cover-button');
 var savedCoversButton = document.querySelector('.view-saved-button');
 var homeView = document.querySelector('.home-view');
 var formView = document.querySelector('.form-view');
@@ -15,6 +15,7 @@ var userTitle = document.querySelector('#title');
 var userDesc1 = document.querySelector('#descriptor1');
 var userDesc2 = document.querySelector('#descriptor2');
 var makeOwnCoverForm = document.querySelector("form");
+var savedCoversSection = document.querySelector('.saved-covers-section');
 
 var savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
@@ -28,6 +29,7 @@ makeOwnCoverButton.addEventListener('click', toggleMakeCover);
 savedCoversButton.addEventListener('click', toggleSavedCovers);
 homeButton.addEventListener('click', toggleHome);
 makeOwnCoverForm.addEventListener('submit', createNewCover);
+saveCoverBtn.addEventListener('click', saveCover);
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
@@ -41,7 +43,7 @@ function displayCover() {
 }
 
 function randomCover() {
-  currentCover = new Cover (                    covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)]);
+  currentCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)]);
   displayCover();
 }
 
@@ -61,6 +63,7 @@ function toggleSavedCovers() {
   homeButton.classList.remove('hidden');
   randomCoverButton.classList.add('hidden');
   saveCoverButton.classList.add('hidden');
+  //call displaySavedCovers
 }
 
 function toggleHome() {
@@ -91,3 +94,29 @@ function createNewCover() {
   toggleHome();
   event.preventDefault()
 }
+//function checkCovers() {
+// for (var i = 0; i < savedCovers.length; i++) {
+  //  if (savedCovers[i].contains(currentCover.cover) === false && savedCovers[i].includes(currentCover.title) && savedCovers[i].includes(currentCover.tagline1) && savedCovers[i].includes(currentCover.tagline2)) {
+    //saveCover();
+
+function saveCover() {
+  savedCovers.push(currentCover);
+}
+//function displaySavedCovers() {
+  //use innerHTML to add covers;
+  //savedCoversSection.classList.add('mini-cover')
+  //for (var i = 0; i < savedCovers.length; i++) {
+    //savedCoversSection.innerHTML = `<img src=savedCover[i].cover> <h2 class="cover-title">savedCover[i].title</h2> <h3 class="tagline">`A tale of ${savedCover[i].tagline1} and ${savedCover[i].tagline2}</h3>`
+
+
+/* Iteration 4
+click save cover button, added to saved covers array
+click twice, only saved once
+click on saved covers button, see saved covers section w/all of the saved covers.
+event listener for save cover button
+calls function that adds that saved cover to the saved covers array, which holds objects in an array
+each click runs through the array checking to make sure there are no duplicates (lots of &&)
+when saved covers button is pressed, a function is called
+this function will display each individual saved cover on the page with no duplicates
+
+*/
