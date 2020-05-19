@@ -95,13 +95,20 @@ function createNewCover() {
   toggleHome();
   event.preventDefault()
 }
-//function checkCovers() {
-// for (var i = 0; i < savedCovers.length; i++) {
-  //  if (savedCovers[i].contains(currentCover.cover) === false && savedCovers[i].includes(currentCover.title) && savedCovers[i].includes(currentCover.tagline1) && savedCovers[i].includes(currentCover.tagline2)) {
-    //saveCover();
+
+function checkCovers() {
+  for (var i = 0; i < savedCovers.length; i++) {
+    if (currentCover.id === savedCovers[i].id) {
+      return false;
+    }
+  }
+  return true;
+}
 
 function saveCover() {
-  savedCovers.push(currentCover);
+  if (checkCovers()) {
+    savedCovers.push(currentCover);
+  }
 }
 
 function displaySavedCovers() {
@@ -116,17 +123,6 @@ function displaySavedCovers() {
   };
 };
 
-// savedCoversSection.innerHTML += `${savedCovers[i]}`
-// savedCoversSection.insertAdjacentHTML('afterbegin', savedCovers[i]) += `<img class='cover-image' src=${savedCovers[i].cover}>`
-// savedCoversSection.insertAdjacentHTML() += `<h2 class="cover-title" id=${savedCovers[i].id}>${savedCovers[i].title}</h2>`
-// savedCoversSection.insertAdjacentHTML() += `<h3 class="tagline">A tale of ${savedCovers[i].tagline1} and ${savedCovers[i].tagline2}</h3>`
-
 // /* Iteration 4
-// click save cover button, added to saved covers array
-// click twice, only saved once
-// click on saved covers button, see saved covers section w/all of the saved covers.
-// event listener for save cover button
-// calls function that adds that saved cover to the saved covers array, which holds objects in an array
 // each click runs through the array checking to make sure there are no duplicates (lots of &&)
 // when saved covers button is pressed, a function is called
-// this function will display each individual saved cover on the page with no duplicates
