@@ -22,18 +22,25 @@ Currently in development: working to refactor code & simplify variable names; fu
 
 ## Project Screenshots
 1. Random cover generator - on reload of page
+![](random_cover_reload.gif)
 
 2. Random cover generator - on click
+![](random_cover_button_click.gif)
 
 3. Button to go to saved covers view
+![](saved_covers_view.gif)
 
 4. Button to go to make your own cover view
+![](make_cover_view.gif)
 
 5. Shows moving between home, saved covers, and make your own cover view
+![](button_functionality.gif)
 
 6. Shows user creating their own cover
+![](make_own_cover.gif)
 
 7. Shows user saving a cover 
+![](save_cover_button.gif)
 
 
 ## Reflection
