@@ -39,9 +39,17 @@ Currently in development: working to refactor code & simplify variable names; fu
 6. Shows user creating their own cover
 ![](make_own_cover.gif)
 
-7. Shows user saving a cover 
+7. Shows user saving a cover
 ![](save_cover_button.gif)
 
+## Next Steps
+As we continue this project, there are several functionality and styling changes we would like to address:
+  - Being able to delete covers from the saved covers section on double click
+  - Require users to fill out all 4 user input fields to create a cover in the make your own cover site view
+  - Change styling and data used to create covers to more match our personal tastes and those of our users
+  - Title size on cover will change size based on length of title (longer titles will appear smaller and smaller titles will appear larger)
+  - Clicking on a saved cover once will show you that cover on the home screen
+  - Allow users to drag and drop saved posters into their own order 
 
 ## Reflection
 Taryn Personal: This project was very eye opening for me. I was expecting to be able to take more of the stuff I learned from lessons and homework and apply it directly to what we needed to do. We ended up needing to do a lot more research and experimentation to achieve the end results called for in the project specs. I think that overall this was a very valuable experience on many fronts. I got more direct experience in what it will be like to work on a software project and how frustration can be a huge part of the process. I’ve learned more about what it’s like to work with a partner, both in person and remotely. I also learned a lot of directly applicable skills, such as more experience with git and GitHub. I also feel I have gained a better understanding of the role Javascript plays in website development, and how JS, CSS, HTML, data models, and the DOM all interact and use each other. Overall, I found this project to be incredibly helpful for furthering my knowledge and understanding of software development, especially coming into this program with no knowledge or experience.
