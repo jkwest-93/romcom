@@ -14,11 +14,11 @@ var userCover = document.querySelector('#cover');
 var userTitle = document.querySelector('#title');
 var userDesc1 = document.querySelector('#descriptor1');
 var userDesc2 = document.querySelector('#descriptor2');
-var makeOwnCoverForm = document.querySelector("form");
+var makeOwnCoverForm = document.querySelector('form');
 var savedCoversSection = document.querySelector('.saved-covers-section');
 
 var savedCovers = [
-  new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
+  new Cover('http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg', 'Sunsets and Sorrows', 'sunsets', 'sorrows')
 ];
 
 var currentCover;
@@ -64,6 +64,7 @@ function displaySavedView() {
   randomCoverBtn.classList.add('hidden');
   saveViewBtn.classList.add('hidden');
   savedCoversSection.innerHTML = '';
+
   displaySavedCovers();
 }
 
@@ -88,6 +89,7 @@ function createUserCover() {
   var titleInput = userTitle.value;
   var desc1Input = userDesc1.value;
   var desc2Input = userDesc2.value;
+
   currentCover = new Cover(coverInput, titleInput, desc1Input, desc2Input);
 
   displayCover();
@@ -101,6 +103,7 @@ function checkDuplicateCovers() {
       return false;
     }
   }
+
   return true;
 }
 
@@ -108,6 +111,7 @@ function saveCurrentCover() {
   if (checkDuplicateCovers()) {
     savedCovers.push(currentCover);
   }
+
   addToArrays();
 }
 
@@ -116,9 +120,10 @@ function displaySavedCovers() {
     var miniSavedCovers = `
       <div class='mini-cover' data-id=${savedCovers[i].id}>
         <img class='cover-image' src=${savedCovers[i].cover}>
-        <h2 class="cover-title">${savedCovers[i].title}</h2>
-        <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline2">${savedCovers[i].tagline2}
+        <h2 class='cover-title'>${savedCovers[i].title}</h2>
+        <h3 class='tagline'>A tale of <span class='tagline-1'>${savedCovers[i].tagline1}</span> and <span class='tagline2'>${savedCovers[i].tagline2}
       </div>`;
+
     savedCoversSection.insertAdjacentHTML('afterbegin', miniSavedCovers);
   };
 };
