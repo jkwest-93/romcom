@@ -21,6 +21,19 @@ This project represents the collaborative efforts of Taryn Martin and Jake West.
 Currently in development: working to refactor code & simplify variable names; future functionality includes ability to delete a saved cover upon mouse click.
 
 ## Project Screenshots
+1. Random cover generator - on reload of page
+
+2. Random cover generator - on click
+
+3. Button to go to saved covers view
+
+4. Button to go to make your own cover view
+
+5. Shows moving between home, saved covers, and make your own cover view
+
+6. Shows user creating their own cover
+
+7. Shows user saving a cover 
 
 
 ## Reflection
