@@ -52,7 +52,7 @@ function toggleMakeCover() {
   formView.classList.remove('hidden');
   savedView.classList.add('hidden');
   homeButton.classList.remove('hidden');
-  saveCoverButton.classList.add('hidden');
+  saveCoverBtn.classList.add('hidden');
   randomCoverButton.classList.add('hidden');
 }
 
@@ -62,8 +62,9 @@ function toggleSavedCovers() {
   formView.classList.add('hidden');
   homeButton.classList.remove('hidden');
   randomCoverButton.classList.add('hidden');
-  saveCoverButton.classList.add('hidden');
-  //call displaySavedCovers
+  saveCoverBtn.classList.add('hidden');
+  savedCoversSection.innerHTML = '';
+  displaySavedCovers();
 }
 
 function toggleHome() {
@@ -72,7 +73,7 @@ function toggleHome() {
   savedView.classList.add('hidden');
   homeButton.classList.add('hidden');
   randomCoverButton.classList.remove('hidden');
-  saveCoverButton.classList.remove('hidden');
+  saveCoverBtn.classList.remove('hidden');
 }
 
 function addToArrays() {
@@ -102,21 +103,30 @@ function createNewCover() {
 function saveCover() {
   savedCovers.push(currentCover);
 }
-//function displaySavedCovers() {
-  //use innerHTML to add covers;
-  //savedCoversSection.classList.add('mini-cover')
-  //for (var i = 0; i < savedCovers.length; i++) {
-    //savedCoversSection.innerHTML = `<img src=savedCover[i].cover> <h2 class="cover-title">savedCover[i].title</h2> <h3 class="tagline">`A tale of ${savedCover[i].tagline1} and ${savedCover[i].tagline2}</h3>`
 
+function displaySavedCovers() {
+  for (var i = 0; i < savedCovers.length; i++) {
+    var miniSavedCovers = `
+      <div class='mini-cover' data-id=${savedCovers[i].id}>
+        <img class='cover-image' src=${savedCovers[i].cover}>
+        <h2 class="cover-title">${savedCovers[i].title}</h2>
+        <h3 class="tagline">A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline2">${savedCovers[i].tagline2}
+      </div>`;
+    savedCoversSection.insertAdjacentHTML('afterbegin', miniSavedCovers);
+  };
+};
 
-/* Iteration 4
-click save cover button, added to saved covers array
-click twice, only saved once
-click on saved covers button, see saved covers section w/all of the saved covers.
-event listener for save cover button
-calls function that adds that saved cover to the saved covers array, which holds objects in an array
-each click runs through the array checking to make sure there are no duplicates (lots of &&)
-when saved covers button is pressed, a function is called
-this function will display each individual saved cover on the page with no duplicates
+// savedCoversSection.innerHTML += `${savedCovers[i]}`
+// savedCoversSection.insertAdjacentHTML('afterbegin', savedCovers[i]) += `<img class='cover-image' src=${savedCovers[i].cover}>`
+// savedCoversSection.insertAdjacentHTML() += `<h2 class="cover-title" id=${savedCovers[i].id}>${savedCovers[i].title}</h2>`
+// savedCoversSection.insertAdjacentHTML() += `<h3 class="tagline">A tale of ${savedCovers[i].tagline1} and ${savedCovers[i].tagline2}</h3>`
 
-*/
+// /* Iteration 4
+// click save cover button, added to saved covers array
+// click twice, only saved once
+// click on saved covers button, see saved covers section w/all of the saved covers.
+// event listener for save cover button
+// calls function that adds that saved cover to the saved covers array, which holds objects in an array
+// each click runs through the array checking to make sure there are no duplicates (lots of &&)
+// when saved covers button is pressed, a function is called
+// this function will display each individual saved cover on the page with no duplicates
