@@ -1,12 +1,12 @@
-var randCover = document.querySelector('.cover-image');
+var newCover = document.querySelector('.cover-image');
 var currentTitle = document.querySelector('.cover-title');
 var currentDesc1 = document.querySelector('.tagline-1');
 var currentDesc2 = document.querySelector('.tagline-2');
-var randomCoverButton = document.querySelector('.random-cover-button');
-var makeOwnCoverButton = document.querySelector('.make-new-button')
-var homeButton = document.querySelector('.home-button');
-var saveCoverBtn = document.querySelector('.save-cover-button');
-var savedCoversButton = document.querySelector('.view-saved-button');
+var randomCoverBtn = document.querySelector('.random-cover-button');
+var makeOwnCoverBtn = document.querySelector('.make-new-button')
+var homeBtn = document.querySelector('.home-button');
+var saveViewBtn = document.querySelector('.save-cover-button');
+var savedCoversBtn = document.querySelector('.view-saved-button');
 var homeView = document.querySelector('.home-view');
 var formView = document.querySelector('.form-view');
 var savedView = document.querySelector('.saved-view');
@@ -23,57 +23,57 @@ var savedCovers = [
 
 var currentCover;
 
-window.onload = randomCover;
-randomCoverButton.addEventListener('click', randomCover);
-makeOwnCoverButton.addEventListener('click', toggleMakeCover);
-savedCoversButton.addEventListener('click', toggleSavedCovers);
-homeButton.addEventListener('click', toggleHome);
-makeOwnCoverForm.addEventListener('submit', createNewCover);
-saveCoverBtn.addEventListener('click', saveCover);
+window.onload = randomizeCover;
+randomCoverBtn.addEventListener('click', randomizeCover);
+makeOwnCoverBtn.addEventListener('click', displayFormView);
+savedCoversBtn.addEventListener('click', displaySavedView);
+homeBtn.addEventListener('click', displayHomeView);
+makeOwnCoverForm.addEventListener('submit', createUserCover);
+saveViewBtn.addEventListener('click', saveCurrentCover);
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
 function displayCover() {
-  randCover.src = currentCover.cover;
+  newCover.src = currentCover.cover;
   currentTitle.innerText = currentCover.title;
   currentDesc1.innerText = currentCover.tagline1;
   currentDesc2.innerText = currentCover.tagline2;
 }
 
-function randomCover() {
+function randomizeCover() {
   currentCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)]);
   displayCover();
 }
 
-function toggleMakeCover() {
+function displayFormView() {
   homeView.classList.add('hidden');
   formView.classList.remove('hidden');
   savedView.classList.add('hidden');
-  homeButton.classList.remove('hidden');
-  saveCoverBtn.classList.add('hidden');
-  randomCoverButton.classList.add('hidden');
+  homeBtn.classList.remove('hidden');
+  saveViewBtn.classList.add('hidden');
+  randomCoverBtn.classList.add('hidden');
 }
 
-function toggleSavedCovers() {
+function displaySavedView() {
   homeView.classList.add('hidden');
   savedView.classList.remove('hidden');
   formView.classList.add('hidden');
-  homeButton.classList.remove('hidden');
-  randomCoverButton.classList.add('hidden');
-  saveCoverBtn.classList.add('hidden');
+  homeBtn.classList.remove('hidden');
+  randomCoverBtn.classList.add('hidden');
+  saveViewBtn.classList.add('hidden');
   savedCoversSection.innerHTML = '';
   displaySavedCovers();
 }
 
-function toggleHome() {
+function displayHomeView() {
   homeView.classList.remove('hidden');
   formView.classList.add('hidden');
   savedView.classList.add('hidden');
-  homeButton.classList.add('hidden');
-  randomCoverButton.classList.remove('hidden');
-  saveCoverBtn.classList.remove('hidden');
+  homeBtn.classList.add('hidden');
+  randomCoverBtn.classList.remove('hidden');
+  saveViewBtn.classList.remove('hidden');
 }
 
 function addToArrays() {
@@ -83,20 +83,19 @@ function addToArrays() {
   descriptors.push(currentCover.tagline2);
 }
 
-function createNewCover() {
+function createUserCover() {
   var coverInput = userCover.value;
   var titleInput = userTitle.value;
   var desc1Input = userDesc1.value;
   var desc2Input = userDesc2.value;
   currentCover = new Cover(coverInput, titleInput, desc1Input, desc2Input);
 
-  addToArrays();
   displayCover();
-  toggleHome();
+  displayHomeView();
   event.preventDefault()
 }
 
-function checkCovers() {
+function checkDuplicateCovers() {
   for (var i = 0; i < savedCovers.length; i++) {
     if (currentCover.id === savedCovers[i].id) {
       return false;
@@ -105,10 +104,11 @@ function checkCovers() {
   return true;
 }
 
-function saveCover() {
-  if (checkCovers()) {
+function saveCurrentCover() {
+  if (checkDuplicateCovers()) {
     savedCovers.push(currentCover);
   }
+  addToArrays();
 }
 
 function displaySavedCovers() {
@@ -122,7 +122,3 @@ function displaySavedCovers() {
     savedCoversSection.insertAdjacentHTML('afterbegin', miniSavedCovers);
   };
 };
-
-// /* Iteration 4
-// each click runs through the array checking to make sure there are no duplicates (lots of &&)
-// when saved covers button is pressed, a function is called
