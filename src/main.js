@@ -1,4 +1,4 @@
-var newCover = document.querySelector('.cover-image');
+var coverImg = document.querySelector('.cover-image');
 var currentTitle = document.querySelector('.cover-title');
 var currentDesc1 = document.querySelector('.tagline-1');
 var currentDesc2 = document.querySelector('.tagline-2');
@@ -36,7 +36,7 @@ function getRandomIndex(array) {
 }
 
 function displayCover() {
-  newCover.src = currentCover.cover;
+  coverImg.src = currentCover.cover;
   currentTitle.innerText = currentCover.title;
   currentDesc1.innerText = currentCover.tagline1;
   currentDesc2.innerText = currentCover.tagline2;
@@ -77,7 +77,7 @@ function displayHomeView() {
   saveViewBtn.classList.remove('hidden');
 }
 
-function addToArrays() {
+function saveUserInput() {
   covers.push(currentCover.cover);
   titles.push(currentCover.title);
   descriptors.push(currentCover.tagline1);
@@ -112,7 +112,7 @@ function saveCurrentCover() {
     savedCovers.push(currentCover);
   }
 
-  addToArrays();
+  saveUserInput();
 }
 
 function displaySavedCovers() {
