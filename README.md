@@ -39,7 +39,7 @@ Currently in development: develop future functionality outlined in next steps (b
 6. When the user clicks the "Make my Book" button, they are taken back to the Home View & their new cover is displayed. Users must hit the "Save Cover" button to save this cover!
 ![](make_own_cover.gif) 
 
-7. Users can switch from view to view with no issues. Originally, we approached this from a `toggle` standpoint and realized that using `add` and `remove` allowed us to apply the `hidden` class with more precision.
+7. Users can switch from view to view with no issues. Originally, we approached this using the `toggle` method. We eventually realized that using `add` and `remove` allowed us to apply the `hidden` class to each of our views with more precision.
 ![](button_functionality.gif)
 
 ## Next Steps
