@@ -18,29 +18,29 @@ This project represents the collaborative efforts of Taryn Martin and Jake West.
 * Strengthen our skills as collaborators on a project
 
 ## Project Status
-Currently in development: working to refactor code & simplify variable names; future functionality includes ability to delete a saved cover upon mouse click.
+Currently in development: develop future functionality outlined in next steps (below)
 
 ## Project Screenshots
-1. Random cover generator - on reload of page
+1. When the page is loaded or re-loaded, a new random cover appears. Each cover is a unique combination of an image, title, and two descriptor taglines. This page is the Home View.
 ![](random_cover_reload.gif)
 
-2. Random cover generator - on click
+2. Any time a user clicks the "Show New Random Cover" button, a new random cover appears. Each cover is a unique combination of an image, title, and two descriptor taglines. This page is the Home View.
 ![](random_cover_button_click.gif)
 
-3. Button to go to saved covers view
+3. When the user clicks the "Save Cover" button, the application stores the current cover. The data from this cover may be displayed into new random covers. Currently, any user input is only stored until the window is refreshed.
+![](save_cover_button.gif)
+
+4. When a user clicks the "View Saved Covers" button, Saved Covers View appears. This shows the user all of the covers they have saved.
 ![](saved_covers_view.gif)
 
-4. Button to go to make your own cover view
+5. When the user clicks the "Make Your Own Cover" button, they see Form View. Here, the user can upload a link to a .jpg image and submit custom titles and descriptors.
 ![](make_cover_view.gif)
 
-5. Shows moving between home, saved covers, and make your own cover view
+6. When the user clicks the "Make my Book" button, they are taken back to the Home View & their new cover is displayed. Users must hit the "Save Cover" button to save this cover!
+![](make_own_cover.gif) 
+
+7. Users can switch from view to view with no issues. Originally, we approached this from a `toggle` standpoint and realized that using `add` and `remove` allowed us to apply the `hidden` class with more precision.
 ![](button_functionality.gif)
-
-6. Shows user creating their own cover
-![](make_own_cover.gif)
-
-7. Shows user saving a cover
-![](save_cover_button.gif)
 
 ## Next Steps
 As we continue this project, there are several functionality and styling changes we would like to address:
